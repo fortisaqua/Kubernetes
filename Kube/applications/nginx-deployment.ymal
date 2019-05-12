@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:1.7.9
+        image: nginx:1.8 # changed version from 1.7.9 to 1.8 so that we can apply the rolling update
         ports:
         - containerPort: 80
 
