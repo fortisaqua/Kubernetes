@@ -6,4 +6,3 @@ mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 kubectl apply -f https://git.io/weave-kube-1.6
-bash ./rookApply.sh
