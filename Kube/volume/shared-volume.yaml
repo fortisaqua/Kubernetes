@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: two-containers
+  name: two-containers-share-volume
 spec:
   restartPolicy: Never
   volumes:
