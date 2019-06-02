@@ -5,14 +5,13 @@ metadata:
     test: liveness
   name: test-liveness-exec
 spec:
-  restartPolicy: OnFailure
   containers:
   - name: liveness
     image: busybox
     args:
     - /bin/sh
     - -c
-    - touch /tmp/healthy; sleep 30; rm -rf /tmp/healthy; sleep 10
+    - touch /tmp/healthy; sleep 30; rm -rf /tmp/healthy; sleep 600
     livenessProbe:
       exec:
         command:
