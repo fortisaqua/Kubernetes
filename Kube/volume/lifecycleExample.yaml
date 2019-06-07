@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: lifecycle-example
+spec:
+  volumes:
+    - name: shared-data
+      hostPath:      
+        path: /var/data/share/
+  containers:
+  - name: lifecycle-demo-container
+    image: nginx
+    volumeMounts:
+    - name: shared-data
+      mountPath: /pod-data
+    lifecycle:
+      postStart:
+        exec:
+          command: ["/bin/sh", "-c", "echo Hello from the postStart handler > /pod-data/message"]
+      preStop:
+        exec:
+          command: ["/bin/sh", "-c", "echo Byebye from the preStop handler > /pod-data/message"]
+

@@ -19,4 +19,11 @@ spec:
         - /tmp/healthy
       initialDelaySeconds: 5
       periodSeconds: 5
+  - name: database
+    image: mongo
+    livenessProbe:
+      tcpSocket:
+        port: 27017
+      initialDelaySeconds: 30
+      periodSeconds: 30
 
