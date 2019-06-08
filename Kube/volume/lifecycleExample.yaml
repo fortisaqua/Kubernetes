@@ -16,8 +16,8 @@ spec:
     lifecycle:
       postStart:
         exec:
-          command: ["/bin/sh", "-c", "echo Hello from the postStart handler > /pod-data/message"]
+          command: ["/bin/sh", "-c", "echo Hello from the postStart handler >> /pod-data/message"]
       preStop:
         exec:
-          command: ["/bin/sh", "-c", "echo Byebye from the preStop handler > /pod-data/message"]
+          command: ["/bin/sh", "-c", "echo Byebye from the preStop handler >> /pod-data/message"]
 

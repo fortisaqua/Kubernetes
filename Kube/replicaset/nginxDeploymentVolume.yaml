@@ -1,11 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment-share-volume
+  name: nginx-deployment
 spec:
   selector:
     matchLabels:
       app: nginx
+  revisionHistoryLimit: 2
   replicas: 4
   template:
     metadata:
